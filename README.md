@@ -1,15 +1,31 @@
 #Northwind database for Postgres
-A simple sql script that will populate a database with the famous northwind example, adapted for postgres.
 
+快速產生postgres northwind環境
 
-1. Make sure all Postgres Environment Variables are correct.
-2. launch `create_db.sh`
-3. Login Postgres server as northwind_user: `$ psql -U northwind_user`
-4. (option)
-    ```
-    $ export PGDATABASE=northwind
-    $ export PGUSER=northwind_user
-    $ export PGPASSWORD=thenorthiscoming
-    ```
-5. Use northwind database as "northwind_user" with password "thenorthiscoming"
+### 準備PostgreSQL
+
+```bash
+$ docker run --name test-postgres -p 5432:5432 -e POSTGRES_PASSWORD=password -d postgres
+```
+
+設定並確認Postgres 用的環境變數(在`create_db.sh`裏有)
+```
+export PGHOST="127.0.0.1"
+export PGPORT=5432
+export PGUSER=postgres
+export PGPASSWORD=password
+```
+
+### 匯入northwind練習資料
+```bash
+$ ./create_db.sh
+
+# (optional 預設create_db.sh也有)
+
+$ export PGDATABASE=northwind
+$ export PGUSER=northwind_user
+$ export PGPASSWORD=thenorthiscoming
+```
+
+快樂使用，enjoy!
 
