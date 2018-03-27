@@ -18,10 +18,12 @@ export PGPASSWORD=password
 
 ### 匯入northwind練習資料
 ```bash
+$ git clone https://github.com/LImoritakeU/northwind_psql.git
+$ cd northwind_psql
 $ ./create_db.sh
 
-# (optional 預設create_db.sh也有)
 
+# (optional 預設create_db.sh也有)
 $ export PGDATABASE=northwind
 $ export PGUSER=northwind_user
 $ export PGPASSWORD=thenorthiscoming
