@@ -5,8 +5,14 @@
 ### 準備PostgreSQL
 
 ```bash
-$ docker run --name test-postgres -p 5432:5432 -e POSTGRES_PASSWORD=password -d postgres
+docker run --name test-postgres -p 5432:5432 -e POSTGRES_PASSWORD=password -d postgres
 ```
+
+確認有PostgreSQL CLI (psql)
+```
+yum install -y postgres
+```
+
 
 設定並確認Postgres 用的環境變數(在`create_db.sh`裏有)
 ```
@@ -18,15 +24,22 @@ export PGPASSWORD=password
 
 ### 匯入northwind練習資料
 ```bash
-$ git clone https://github.com/LImoritakeU/northwind_psql.git
-$ cd northwind_psql
-$ ./create_db.sh
+git clone https://github.com/LImoritakeU/northwind_psql.git
+cd northwind_psql
+./create_db.sh
 
 
-# (optional 預設create_db.sh也有)
-$ export PGDATABASE=northwind
-$ export PGUSER=northwind_user
-$ export PGPASSWORD=thenorthiscoming
+source .env
+# 或手動執行
+export PGDATABASE=northwind
+export PGUSER=northwind_user
+export PGPASSWORD=winteriscoming
+
+```
+
+### 執行客戶端
+```
+psql
 ```
 
 快樂使用，enjoy!
