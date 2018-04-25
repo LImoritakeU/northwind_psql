@@ -8,7 +8,7 @@
 docker run --name test-postgres -p 5432:5432 -e POSTGRES_PASSWORD=password -d postgres
 ```
 
-確認有PostgreSQL CLI (psql)
+確認有PostgreSQL Command Line 工具 (psql)
 ```
 yum install -y postgres
 ```
@@ -44,3 +44,11 @@ psql
 
 快樂使用，enjoy!
 
+
+### 匯入views
+
+views 主要是用來練習用，建議手動建立view，如果需要直接引入，執行`create_view.sh`
+
+```
+bash create_view.sh
+```
